@@ -1,0 +1,19 @@
+
+<p>student informatiom form </p>
+
+<!-- One-way data binding -->
+<P>Welcome, {{studentName}} !</P>
+
+<!-- Tow-way data binding -->
+<input [(ngModel)]="studentName" [placeholder]="'Enter the student name'" [ngStyle]="{borderColor: studentName ? 'green' : 'red'}">
+
+<p [ngClass]="{'valid-name': studentName.length > 3, 'invalid-name': studentName.length <=3}">Name must be more than three character </p>
+
+<button (click)="submitForm()" >submit</button>  
+
+<p *ngIf="submitted"> Data Submitted Successfully !</p>
+ <!-- @if(submitted) {<p *ngIf=""> Data Submitted Successfully !</p>} -->
+
+ <ul>
+    <li *ngFor="let student of student">{{student}}</li>
+ </ul>
